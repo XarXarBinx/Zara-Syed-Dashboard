@@ -1,0 +1,28 @@
+// ==========================================================
+// variables - colours and screen sizes live here
+// change a colour once and it updates everywhere
+// ==========================================================
+
+// ---------- light mode ----------
+$lilac-light: #8a5cc2;          // links, progress bars, icons
+$lilac-light-hover: #6f45a6;
+$mauve-light: #8a5cc2;          // chart colour 1
+$pink-light: #c2648f;           // chart colour 2
+
+// ---------- dark mode (shadcn style) ----------
+$card-dark: #171717;
+$page-dark: #0a0a0a;
+$text-dark: #fafafa;
+$border-dark: #2e2e2e;
+$lilac-dark: #c9a7eb;
+$lilac-dark-hover: #dcc4f2;
+$mauve-dark: #c9a7eb;
+$pink-dark: #e8a0c4;
+
+// ---------- screen sizes (same as bootstrap's) ----------
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

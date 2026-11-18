@@ -1,0 +1,15 @@
+{
+  "name": "zara-syed-dashboard",
+  "version": "1.0.0",
+  "description": "INM320 Bootstrap dashboard",
+  "scripts": {
+    "sass": "sass scss/style.scss public/assets/css/style.css --no-source-map",
+    "sass:watch": "sass --watch scss/style.scss public/assets/css/style.css --no-source-map",
+    "start": "npm run sass && concurrently \"npm:sass:watch\" \"lite-server\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7",
+    "lite-server": "^2.6.1",
+    "sass": "^1.108.2"
+  }
+}

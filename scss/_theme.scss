@@ -1,0 +1,36 @@
+// ==========================================================
+// theme - swaps bootstrap's colours for light and dark mode
+// ==========================================================
+
+@use "variables" as *;
+@use "helpers" as *;
+
+// ---------- light mode colours ----------
+:root {
+  --bs-link-color: #{$lilac-light};
+  --bs-link-color-rgb: #{rgb-numbers($lilac-light)};
+  --bs-link-hover-color: #{$lilac-light-hover};
+  --bs-link-hover-color-rgb: #{rgb-numbers($lilac-light-hover)};
+
+  // chart colours, as rgb numbers so the js can add transparency
+  --chart-1-rgb: #{rgb-numbers($mauve-light)};
+  --chart-2-rgb: #{rgb-numbers($pink-light)};
+}
+
+// ---------- dark mode colours (shadcn style) ----------
+[data-bs-theme="dark"] {
+  --bs-body-bg: #{$card-dark};                    // cards
+  --bs-body-bg-rgb: #{rgb-numbers($card-dark)};
+  --bs-tertiary-bg: #{$page-dark};                // page background
+  --bs-tertiary-bg-rgb: #{rgb-numbers($page-dark)};
+  --bs-body-color: #{$text-dark};                 // text
+  --bs-body-color-rgb: #{rgb-numbers($text-dark)};
+  --bs-border-color: #{$border-dark};             // card and input borders
+  --bs-link-color: #{$lilac-dark};                // soft lilac
+  --bs-link-color-rgb: #{rgb-numbers($lilac-dark)};
+  --bs-link-hover-color: #{$lilac-dark-hover};
+  --bs-link-hover-color-rgb: #{rgb-numbers($lilac-dark-hover)};
+
+  --chart-1-rgb: #{rgb-numbers($mauve-dark)};
+  --chart-2-rgb: #{rgb-numbers($pink-dark)};
+}

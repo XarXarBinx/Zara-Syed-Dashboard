@@ -1,0 +1,5 @@
+# installed packages (npm install brings them back)
+node_modules/
+
+# mac system files
+.DS_Store

@@ -1,0 +1,42 @@
+// ==========================================================
+// layout - sidebar and chart sizes, mobile first
+// base styles are for phones, media queries add to them on bigger screens
+// ==========================================================
+
+@use "helpers" as *;
+
+// ---------- sidebar ----------
+// on phones it's a slide-out menu, so nothing to change here
+#sidebar {
+  // desktop: the sidebar stays in place while the page scrolls
+  @include up(lg) {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+// ---------- charts ----------
+// chart.js needs a sized box with position relative to fill
+.chart-box {
+  position: relative;
+  height: 240px;
+
+  // big screens: a bit taller since the cards sit side by side
+  @include up(xl) {
+    height: 280px;
+  }
+}
+
+// ---------- cards ----------
+.card {
+  --bs-card-border-radius: 0.75rem;
+
+  // tablets and up: more breathing room inside cards
+  @include up(md) {
+    --bs-card-spacer-x: 1.5rem;
+    --bs-card-spacer-y: 1.5rem;
+  }
+}

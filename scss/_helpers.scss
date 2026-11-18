@@ -1,0 +1,22 @@
+// ==========================================================
+// helpers - a reusable function and mixin
+// ==========================================================
+
+@use "sass:color";
+@use "sass:map";
+@use "variables" as *;
+
+// turns a hex colour into "138, 92, 194" for bootstrap's -rgb variables
+@function rgb-numbers($colour) {
+  @return color.channel($colour, "red", $space: rgb),
+    color.channel($colour, "green", $space: rgb),
+    color.channel($colour, "blue", $space: rgb);
+}
+
+// mobile first media query: styles inside apply from this size up
+// example: @include up(lg) { ... }
+@mixin up($size) {
+  @media (min-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}

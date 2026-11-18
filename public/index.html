@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <!-- makes the page scale properly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zara's Custom Dash</title>
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- custom styles (after bootstrap so they win) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- ========== sidebar (slide-out on mobile, column on desktop) ========== -->
+      <aside class="offcanvas-lg offcanvas-start col-lg-3 col-xl-2 p-lg-3" id="sidebar" tabindex="-1" aria-labelledby="sidebar-title">
+
+        <!-- close button, only shows on mobile -->
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="close menu"></button>
+        </div>
+
+        <div class="offcanvas-body flex-column">
+          <p class="fw-bold border-bottom pb-3" id="sidebar-title">
+            <i class="bi bi-grid-1x2"></i> ZARA'S CUSTOM DASH
+          </p>
+
+          <nav aria-label="main navigation">
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link active" href="#" aria-current="page"><i class="bi bi-house-door-fill"></i> Dashboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-bar-chart-fill"></i> Tables</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-credit-card-fill"></i> Billing</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-wrench"></i> RTL</a></li>
+            </ul>
+
+            <h2 class="small fw-bold text-uppercase mt-4 px-3">Account Pages</h2>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-fill"></i> Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-file-earmark-text-fill"></i> Sign In</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-rocket-takeoff-fill"></i> Sign Up</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- ========== right side (header + main) ========== -->
+      <div class="col-lg-9 col-xl-10 p-3">
+
+        <!-- ---------- header ---------- -->
+        <header class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+          <div class="d-flex align-items-center gap-3">
+            <!-- opens the sidebar, mobile only -->
+            <button type="button" class="btn btn-outline-secondary btn-sm d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="open menu">
+              <i class="bi bi-layout-sidebar"></i>
+            </button>
+
+            <div>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb small mb-1">
+                  <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                </ol>
+              </nav>
+              <h1 class="h6 fw-bold mb-0">Dashboard</h1>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <form role="search">
+              <input class="form-control" type="search" placeholder="Type here..." aria-label="search">
+            </form>
+            <a href="#" class="text-secondary text-decoration-none text-nowrap"><i class="bi bi-person-fill"></i> Sign In</a>
+            <!-- light / dark toggle -->
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="theme-toggle" aria-label="switch light or dark mode">
+              <i class="bi bi-circle-half"></i>
+            </button>
+            <i class="bi bi-gear-fill text-secondary"></i>
+            <i class="bi bi-bell-fill text-secondary"></i>
+          </div>
+        </header>
+
+        <!-- ---------- main content ---------- -->
+        <main>
+
+          <!-- ---------- stats row ---------- -->
+          <section class="row g-4 mb-4" aria-label="today's stats">
+
+            <!-- today's money -->
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h2 class="fs-6 fw-normal text-body-secondary mb-0">Today's Money</h2>
+                    <span class="badge rounded-pill border text-body-emphasis fw-medium">
+                      <i class="bi bi-arrow-up-right"></i> +55%
+                    </span>
+                  </div>
+                  <p class="fs-2 fw-semibold mb-3">$53,000</p>
+                  <p class="small fw-medium mb-1">Trending up today <i class="bi bi-graph-up-arrow"></i></p>
+                  <p class="small text-body-secondary mb-0">Compared to yesterday</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- today's users -->
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h2 class="fs-6 fw-normal text-body-secondary mb-0">Today's Users</h2>
+                    <span class="badge rounded-pill border text-body-emphasis fw-medium">
+                      <i class="bi bi-arrow-up-right"></i> +5%
+                    </span>
+                  </div>
+                  <p class="fs-2 fw-semibold mb-3">2,300</p>
+                  <p class="small fw-medium mb-1">Steady growth <i class="bi bi-graph-up-arrow"></i></p>
+                  <p class="small text-body-secondary mb-0">Active visitors today</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- new clients -->
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h2 class="fs-6 fw-normal text-body-secondary mb-0">New Clients</h2>
+                    <span class="badge rounded-pill border text-body-emphasis fw-medium">
+                      <i class="bi bi-arrow-down-right"></i> -14%
+                    </span>
+                  </div>
+                  <p class="fs-2 fw-semibold mb-3">+3,052</p>
+                  <p class="small fw-medium mb-1">Down this period <i class="bi bi-graph-down-arrow"></i></p>
+                  <p class="small text-body-secondary mb-0">Acquisition needs attention</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- total sales -->
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h2 class="fs-6 fw-normal text-body-secondary mb-0">Total Sales</h2>
+                    <span class="badge rounded-pill border text-body-emphasis fw-medium">
+                      <i class="bi bi-arrow-up-right"></i> +8%
+                    </span>
+                  </div>
+                  <p class="fs-2 fw-semibold mb-3">$173,000</p>
+                  <p class="small fw-medium mb-1">Trending up this month <i class="bi bi-graph-up-arrow"></i></p>
+                  <p class="small text-body-secondary mb-0">Meets sales projections</p>
+                </div>
+              </article>
+            </div>
+
+          </section>
+
+          <!-- ---------- sales overview + active users, 50% each ---------- -->
+          <div class="row g-4 mb-4">
+
+            <!-- sales overview (gradient area chart) -->
+            <section class="col-12 col-xl-6" aria-labelledby="sales-title">
+              <article class="card h-100">
+                <div class="card-body d-flex flex-column">
+                  <h2 class="fs-5 fw-semibold mb-1" id="sales-title">Sales Overview</h2>
+                  <p class="small text-body-secondary">This year compared to last year</p>
+
+                  <div class="chart-box my-auto">
+                    <canvas id="sales-chart" role="img" aria-label="area chart of monthly sales, this year compared to last year"></canvas>
+                  </div>
+
+                  <p class="small fw-medium mt-4 mb-1">Trending up by 5.2% this month <i class="bi bi-graph-up-arrow"></i></p>
+                  <p class="small text-body-secondary mb-0">January - December 2026</p>
+                </div>
+              </article>
+            </section>
+
+            <!-- active users (radar chart + mini stats) -->
+            <section class="col-12 col-xl-6" aria-labelledby="users-title">
+              <article class="card h-100">
+                <div class="card-body">
+                  <h2 class="fs-5 fw-semibold mb-1" id="users-title">Active Users</h2>
+                  <p class="small text-body-secondary"><span class="text-body-emphasis fw-medium">(+23)</span> than last week</p>
+
+                  <div class="chart-box">
+                    <canvas id="users-chart" role="img" aria-label="radar chart of desktop and mobile users by month"></canvas>
+                  </div>
+
+                  <!-- mini stats: 2 across on phones, 4 across from small screens up -->
+                  <div class="row row-cols-2 row-cols-sm-4 g-3 mt-2">
+                    <div class="col">
+                      <p class="small text-body-secondary mb-1"><i class="bi bi-wallet2"></i> Users</p>
+                      <p class="fw-semibold mb-2">32,984</p>
+                      <div class="progress" role="progressbar" aria-label="users" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar w-50"></div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="small text-body-secondary mb-1"><i class="bi bi-cursor"></i> Clicks</p>
+                      <p class="fw-semibold mb-2">2.42m</p>
+                      <div class="progress" role="progressbar" aria-label="clicks" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar w-75"></div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="small text-body-secondary mb-1"><i class="bi bi-cart"></i> Sales</p>
+                      <p class="fw-semibold mb-2">$2,400</p>
+                      <div class="progress" role="progressbar" aria-label="sales" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar w-25"></div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="small text-body-secondary mb-1"><i class="bi bi-box-seam"></i> Items</p>
+                      <p class="fw-semibold mb-2">320</p>
+                      <div class="progress" role="progressbar" aria-label="items" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar w-50"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+          </div>
+
+          <!-- ---------- my courses + report card ---------- -->
+          <div class="row g-4">
+
+            <!-- my courses (projects table, best to worst) -->
+            <section class="col-12 col-xl-8" aria-labelledby="courses-title">
+              <article class="card h-100">
+                <div class="card-body">
+                  <h2 class="fs-5 fw-semibold mb-1" id="courses-title">My Courses</h2>
+                  <p class="small text-body-secondary"><i class="bi bi-check-circle-fill text-success"></i> <span class="fw-medium text-body-emphasis">14 projects</span> done this term</p>
+
+                  <!-- table-responsive lets the table scroll sideways on small screens -->
+                  <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                      <thead>
+                        <tr class="small text-uppercase">
+                          <th scope="col" class="text-body-secondary fw-medium">Course</th>
+                          <th scope="col" class="text-body-secondary fw-medium">Prof</th>
+                          <th scope="col" class="text-body-secondary fw-medium">Projects</th>
+                          <th scope="col" class="text-body-secondary fw-medium">Progress</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="fw-medium text-nowrap">INM320 Web Development II</td>
+                          <td><img src="assets/images/prof-inm320.png" alt="INM320 professor" class="avatar rounded-circle"></td>
+                          <td>3 / 4</td>
+                          <td>
+                            <div class="progress" role="progressbar" aria-label="inm320 progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar w-75"></div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-medium text-nowrap">INM330 Introduction to 3D</td>
+                          <td><img src="assets/images/prof-inm330.jpg" alt="INM330 professor" class="avatar rounded-circle"></td>
+                          <td>2 / 4</td>
+                          <td>
+                            <div class="progress" role="progressbar" aria-label="inm330 progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar w-50"></div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-medium text-nowrap">INM310 Business III</td>
+                          <td><img src="assets/images/prof-inm310.jpg" alt="INM310 professor" class="avatar rounded-circle"></td>
+                          <td>2 / 4</td>
+                          <td>
+                            <div class="progress" role="progressbar" aria-label="inm310 progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar w-50"></div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-medium text-nowrap">INM340 Content Creation</td>
+                          <td><img src="assets/images/prof-inm340.jpg" alt="INM340 professor" class="avatar rounded-circle"></td>
+                          <td>3 / 4</td>
+                          <td>
+                            <div class="progress" role="progressbar" aria-label="inm340 progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar w-75"></div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-medium text-nowrap">INM302 VFX &amp; Motion Graphics</td>
+                          <td><img src="assets/images/prof-inm302.png" alt="INM302 professor" class="avatar rounded-circle"></td>
+                          <td>2 / 4</td>
+                          <td>
+                            <div class="progress" role="progressbar" aria-label="inm302 progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar w-50"></div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-medium text-nowrap">INM300 User Experience Design</td>
+                          <td><img src="assets/images/prof-inm300.jpg" alt="INM300 professor" class="avatar rounded-circle"></td>
+                          <td>2 / 4</td>
+                          <td>
+                            <div class="progress" role="progressbar" aria-label="inm300 progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar w-50"></div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <!-- report card (timeline, best to worst) -->
+            <section class="col-12 col-xl-4" aria-labelledby="report-title">
+              <article class="card h-100">
+                <div class="card-body">
+                  <h2 class="fs-5 fw-semibold mb-1" id="report-title">Report Card</h2>
+                  <p class="small text-body-secondary mb-4">Brutally honest self-grades</p>
+
+                  <ol class="timeline">
+                    <li>
+                      <i class="bi bi-stars"></i>
+                      <p class="fw-medium mb-0">Thriving (I hope)</p>
+                      <p class="small text-body-secondary mb-0">INM320 Web Development II</p>
+                    </li>
+                    <li>
+                      <i class="bi bi-emoji-sunglasses"></i>
+                      <p class="fw-medium mb-0">Third dimension unlocked</p>
+                      <p class="small text-body-secondary mb-0">INM330 Introduction to 3D</p>
+                    </li>
+                    <li>
+                      <i class="bi bi-emoji-smile"></i>
+                      <p class="fw-medium mb-0">We moving</p>
+                      <p class="small text-body-secondary mb-0">INM310 Business III</p>
+                    </li>
+                    <li>
+                      <i class="bi bi-emoji-wink"></i>
+                      <p class="fw-medium mb-0">Rocky start, but we back</p>
+                      <p class="small text-body-secondary mb-0">INM340 Content Creation</p>
+                    </li>
+                    <li>
+                      <i class="bi bi-emoji-heart-eyes"></i>
+                      <p class="fw-medium mb-0">No clue what I'm doing, lowkey obsessed</p>
+                      <p class="small text-body-secondary mb-0">INM302 VFX &amp; Motion Graphics</p>
+                    </li>
+                    <li>
+                      <i class="bi bi-emoji-smile-upside-down"></i>
+                      <p class="fw-medium mb-0">Running on hope and a prayer</p>
+                      <p class="small text-body-secondary mb-0">INM300 User Experience Design</p>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+            </section>
+
+          </div>
+
+        </main>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- bootstrap js (goes at the end so the page loads first) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- chart.js (draws the charts) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
+  <!-- custom script -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

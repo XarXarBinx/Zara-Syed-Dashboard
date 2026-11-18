@@ -1,0 +1,62 @@
+// ==========================================================
+// components - progress bars, table, avatars, timeline
+// ==========================================================
+
+// ---------- progress bars (active users + courses) ----------
+.progress {
+  --bs-progress-height: 4px;
+  --bs-progress-bar-bg: var(--bs-link-color);
+  min-width: 6rem;
+}
+
+// ---------- courses table ----------
+.table {
+  --bs-table-bg: transparent;     // let the card colour show through
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;              // crops photos into the circle without stretching
+}
+
+// ---------- report card timeline ----------
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 2.25rem;
+    padding-bottom: 1.25rem;
+
+    // the vertical line between icons
+    &::before {
+      content: "";
+      position: absolute;
+      top: 1.75rem;
+      bottom: 0.25rem;
+      left: 0.6rem;
+      width: 1px;
+      background-color: var(--bs-border-color);
+    }
+
+    // no line after the last item
+    &:last-child {
+      padding-bottom: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .bi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.25rem;
+    color: var(--bs-link-color);
+  }
+}
