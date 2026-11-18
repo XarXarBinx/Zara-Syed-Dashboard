@@ -79,7 +79,7 @@
   width: 2rem;
   height: 2rem;
   object-fit: cover;
-  background-color: rgba(var(--bs-link-color-rgb), 0.25);
+  background-color: #e4d7f5;
 }
 
 .avatar-me {

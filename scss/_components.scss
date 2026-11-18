@@ -2,6 +2,7 @@
 // components - progress bars, table, avatars, timeline
 // ==========================================================
 
+@use "variables" as *;
 @use "helpers" as *;
 
 // ---------- progress bars (active users + courses) ----------
@@ -35,7 +36,7 @@
   width: 2rem;
   height: 2rem;
   object-fit: cover;              // crops photos into the circle without stretching
-  background-color: rgba(var(--bs-link-color-rgb), 0.25);  // soft lilac behind see-through images
+  background-color: $avatar-bg;   // light lilac behind see-through images
 }
 
 // my headshot is tall, so keep the top (my face) in the circle
