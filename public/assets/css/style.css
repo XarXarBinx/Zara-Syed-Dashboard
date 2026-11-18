@@ -56,17 +56,34 @@
 .progress {
   --bs-progress-height: 4px;
   --bs-progress-bar-bg: var(--bs-link-color);
-  min-width: 6rem;
+  min-width: 4rem;
+}
+@media (min-width: 576px) {
+  .progress {
+    min-width: 6rem;
+  }
 }
 
 .table {
   --bs-table-bg: transparent;
 }
 
+@media (min-width: 768px) {
+  .course-name {
+    white-space: nowrap;
+  }
+}
+
 .avatar {
+  flex-shrink: 0;
   width: 2rem;
   height: 2rem;
   object-fit: cover;
+  background-color: rgba(var(--bs-link-color-rgb), 0.25);
+}
+
+.avatar-me {
+  object-position: center top;
 }
 
 .timeline {

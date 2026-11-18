@@ -2,11 +2,18 @@
 // components - progress bars, table, avatars, timeline
 // ==========================================================
 
+@use "helpers" as *;
+
 // ---------- progress bars (active users + courses) ----------
 .progress {
   --bs-progress-height: 4px;
   --bs-progress-bar-bg: var(--bs-link-color);
-  min-width: 6rem;
+  min-width: 4rem;
+
+  // small screens and up: a bit longer
+  @include up(sm) {
+    min-width: 6rem;
+  }
 }
 
 // ---------- courses table ----------
@@ -14,10 +21,26 @@
   --bs-table-bg: transparent;     // let the card colour show through
 }
 
+// phones: long course names wrap to two lines
+// tablets and up: keep them on one line
+.course-name {
+  @include up(md) {
+    white-space: nowrap;
+  }
+}
+
+// ---------- avatars (profs + my headshot) ----------
 .avatar {
+  flex-shrink: 0;                 // stays round inside flex rows
   width: 2rem;
   height: 2rem;
   object-fit: cover;              // crops photos into the circle without stretching
+  background-color: rgba(var(--bs-link-color-rgb), 0.25);  // soft lilac behind see-through images
+}
+
+// my headshot is tall, so keep the top (my face) in the circle
+.avatar-me {
+  object-position: center top;
 }
 
 // ---------- report card timeline ----------
